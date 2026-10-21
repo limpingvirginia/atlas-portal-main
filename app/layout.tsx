@@ -7,7 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import CrispChat from "@/components/crisp-chat";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 const notoSerifHeading = Manrope({
   subsets: ["latin"],
@@ -16,7 +16,7 @@ const notoSerifHeading = Manrope({
 });
 
 export const metadata = {
-  metadataBase: new URL(process.env.BASE_URL || "https://shadcnuidashboard.com")
+  metadataBase: new URL("https://limpingvirginia.github.io/atlas-portal-main")
 };
 
 export default function RootLayout({
