@@ -1,22 +1,14 @@
 import type { NextConfig } from "next";
 
+const repoName = "atlas-portal-main";
+
 const nextConfig: NextConfig = {
-  // Unmatched paths proxy to the demo app (multi-zone). Fallback phase runs
-  // after ALL Next routes including dynamic ones like /api/auth/[...all] —
-  // a vercel.json rewrite would shadow dynamic routes instead.
-  async rewrites() {
-    return {
-      beforeFiles: [],
-      afterFiles: [],
-      fallback: [
-        {
-          source: "/:path*",
-          destination: "https://nextjs-dashboard.shadcnuidashboard.com/:path*"
-        }
-      ]
-    };
-  },
+  output: "export",
+  trailingSlash: true,
+  basePath: process.env.NODE_ENV === "production" ? `/${repoName}` : undefined,
+  assetPrefix: process.env.NODE_ENV === "production" ? `/${repoName}/` : undefined,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
